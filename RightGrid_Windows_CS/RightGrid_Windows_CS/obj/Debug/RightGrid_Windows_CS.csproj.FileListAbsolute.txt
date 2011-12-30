@@ -18,3 +18,8 @@ C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementa
 C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\RightGrid_Windows_CS\RightGrid_Windows_CS\bin\Debug\Yaml.pdb
 C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\RightGrid_Windows_CS\RightGrid_Windows_CS\bin\Debug\Yaml.xml
 C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\RightGrid_Windows_CS\RightGrid_Windows_CS\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\RightGrid_Windows_CS\RightGrid_Windows_CS\bin\Debug\YamlUtility.exe
+C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\RightGrid_Windows_CS\RightGrid_Windows_CS\bin\Debug\YamlUtility.pdb
+C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\RightGrid_Windows_CS\RightGrid_Windows_CS\obj\Debug\WinRightGrid.Properties.Resources.resources
+C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\RightGrid_Windows_CS\RightGrid_Windows_CS\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\RightGrid_Windows_CS\RightGrid_Windows_CS\obj\Debug\GenerateResource.write.1.tlog
