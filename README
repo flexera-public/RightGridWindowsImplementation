@@ -1,2 +1,9 @@
 This is a pure C# implementation of the rightgrid features. Instead of a rightgrid.yaml for config, it uses the app.config. 
 This is implemented with .net 4.0. The first implementation will use sqs and s3 only. 
+
+
+Libraries
+// Yaml Parser - http://www.codeproject.com/KB/recipes/yamlparser.aspx
+// AWS.NetSDK - http://aws.amazon.com/sdkfornet/ 
+// aws.amazon.com/articles/3051?_encoding=UTF8&jiveRedirect=1
+//http://sufianrashid.wordpress.com/2011/10/17/c-modify-app-config-file-at-run-time/
