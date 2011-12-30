@@ -16,11 +16,6 @@ using Amazon.SQS;
 using Amazon.SQS.Model;
 using Yaml;
 
-
-// Yaml Parser - http://www.codeproject.com/KB/recipes/yamlparser.aspx
-// AWS.NetSDK - http://aws.amazon.com/sdkfornet/
-//http://sufianrashid.wordpress.com/2011/10/17/c-modify-app-config-file-at-run-time/
-
 namespace WinRightGrid
 {
     class Program
