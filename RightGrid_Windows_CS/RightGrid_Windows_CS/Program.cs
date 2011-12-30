@@ -17,32 +17,24 @@ using Amazon.SQS.Model;
 using Yaml;
 
 
+
 // Yaml Parser - http://www.codeproject.com/KB/recipes/yamlparser.aspx
 // AWS.NetSDK - http://aws.amazon.com/sdkfornet/
 //http://sufianrashid.wordpress.com/2011/10/17/c-modify-app-config-file-at-run-time/
 
-namespace AWS_Console_App1
+namespace WinRightGrid
 {
     class Program
     {
-        public static string queue_url = "httpd";
         public static void Main(string[] args)
         {
             Console.WriteLine(ConfigurationManager.AppSettings["AWSAccessKey"]);
-            Console.WriteLine(queue_url);
-            Console.WriteLine(ListSQSQueues());
+            Console.WriteLine(Queue.ListSQSQueues());
             Console.WriteLine(AddSQSMessage());
             Console.Write(GetServiceOutput());
             Console.Read();
         }
-        public static string ListSQSQueues()
-        {
-            AmazonSQS sqs = AWSClientFactory.CreateAmazonSQSClient();
-            ListQueuesRequest sqsrequest = new ListQueuesRequest();
-            ListQueuesResponse sqsresponse = sqs.ListQueues(sqsrequest);
-            ListQueuesResult sqsrst = sqsresponse.ListQueuesResult;
-            return sqsrst.ToString();
-        }
+
         public static string AddSQSMessage()
         {
             AmazonSQS sqs = AWSClientFactory.CreateAmazonSQSClient();
