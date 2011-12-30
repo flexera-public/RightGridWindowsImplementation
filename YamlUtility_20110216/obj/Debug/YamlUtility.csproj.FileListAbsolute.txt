@@ -1,0 +1,20 @@
+C:\Users\rshade\Downloads\YamlUtility_20110216\bin\Debug\YamlUtility.exe
+C:\Users\rshade\Downloads\YamlUtility_20110216\bin\Debug\YamlUtility.pdb
+C:\Users\rshade\Downloads\YamlUtility_20110216\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\rshade\Downloads\YamlUtility_20110216\obj\Debug\QiHe.Yaml.YamlUtility.UI.MainForm.resources
+C:\Users\rshade\Downloads\YamlUtility_20110216\obj\Debug\QiHe.Yaml.Properties.Resources.resources
+C:\Users\rshade\Downloads\YamlUtility_20110216\obj\Debug\QiHe.CodeLib.FileBrower.resources
+C:\Users\rshade\Downloads\YamlUtility_20110216\obj\Debug\ResGen.read.1.tlog
+C:\Users\rshade\Downloads\YamlUtility_20110216\obj\Debug\ResGen.write.1.tlog
+C:\Users\rshade\Downloads\YamlUtility_20110216\obj\Debug\YamlUtility.exe
+C:\Users\rshade\Downloads\YamlUtility_20110216\obj\Debug\YamlUtility.pdb
+C:\Users\rshade\Documents\Visual Studio 2010\Projects\YamlUtility_20110216\bin\Debug\YamlUtility.exe
+C:\Users\rshade\Documents\Visual Studio 2010\Projects\YamlUtility_20110216\bin\Debug\YamlUtility.pdb
+C:\Users\rshade\Documents\Visual Studio 2010\Projects\YamlUtility_20110216\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\rshade\Documents\Visual Studio 2010\Projects\YamlUtility_20110216\obj\Debug\QiHe.Yaml.YamlUtility.UI.MainForm.resources
+C:\Users\rshade\Documents\Visual Studio 2010\Projects\YamlUtility_20110216\obj\Debug\QiHe.Yaml.Properties.Resources.resources
+C:\Users\rshade\Documents\Visual Studio 2010\Projects\YamlUtility_20110216\obj\Debug\QiHe.CodeLib.FileBrower.resources
+C:\Users\rshade\Documents\Visual Studio 2010\Projects\YamlUtility_20110216\obj\Debug\ResGen.read.1.tlog
+C:\Users\rshade\Documents\Visual Studio 2010\Projects\YamlUtility_20110216\obj\Debug\ResGen.write.1.tlog
+C:\Users\rshade\Documents\Visual Studio 2010\Projects\YamlUtility_20110216\obj\Debug\YamlUtility.exe
+C:\Users\rshade\Documents\Visual Studio 2010\Projects\YamlUtility_20110216\obj\Debug\YamlUtility.pdb

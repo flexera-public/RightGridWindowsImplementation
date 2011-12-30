@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="RightGrid_Windows_CS">
+</Property><Property Name="Solution File" Value="C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\RightGrid_Windows_CS\RightGrid_Windows_CS.sln">
+</Property><Property Name="Date" Value="Friday, December 30, 2011">
+</Property><Property Name="Time" Value="14:26:43 PM">
+</Property></Properties><Event ErrorLevel="0" Project="Yaml" Source="..\yaml\Code\Yaml.csproj" Description="Project file successfully backed up as C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\RightGrid_Windows_CS\Backup\Yaml.csproj">
+</Event><Event ErrorLevel="0" Project="Yaml" Source="..\yaml\Code\Yaml.csproj.user" Description="Project user file successfully backed up as C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\RightGrid_Windows_CS\Backup\Yaml.csproj.user">
+</Event><Event ErrorLevel="0" Project="Yaml" Source="..\yaml\Code\AssemblyInfo.cs" Description="File successfully backed up as C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\RightGrid_Windows_CS\Backup\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="Yaml" Source="..\yaml\Code\Binary.cs" Description="File successfully backed up as C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\RightGrid_Windows_CS\Backup\Binary.cs">
+</Event><Event ErrorLevel="0" Project="Yaml" Source="..\yaml\Code\Boolean.cs" Description="File successfully backed up as C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\RightGrid_Windows_CS\Backup\Boolean.cs">
+</Event><Event ErrorLevel="0" Project="Yaml" Source="..\yaml\Code\Float.cs" Description="File successfully backed up as C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\RightGrid_Windows_CS\Backup\Float.cs">
+</Event><Event ErrorLevel="0" Project="Yaml" Source="..\yaml\Code\Integer.cs" Description="File successfully backed up as C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\RightGrid_Windows_CS\Backup\Integer.cs">
+</Event><Event ErrorLevel="0" Project="Yaml" Source="..\yaml\Code\Mapping.cs" Description="File successfully backed up as C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\RightGrid_Windows_CS\Backup\Mapping.cs">
+</Event><Event ErrorLevel="0" Project="Yaml" Source="..\yaml\Code\Node.cs" Description="File successfully backed up as C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\RightGrid_Windows_CS\Backup\Node.cs">
+</Event><Event ErrorLevel="0" Project="Yaml" Source="..\yaml\Code\Null.cs" Description="File successfully backed up as C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\RightGrid_Windows_CS\Backup\Null.cs">
+</Event><Event ErrorLevel="0" Project="Yaml" Source="..\yaml\Code\ParseException.cs" Description="File successfully backed up as C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\RightGrid_Windows_CS\Backup\ParseException.cs">
+</Event><Event ErrorLevel="0" Project="Yaml" Source="..\yaml\Code\ParseStream.cs" Description="File successfully backed up as C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\RightGrid_Windows_CS\Backup\ParseStream.cs">
+</Event><Event ErrorLevel="0" Project="Yaml" Source="..\yaml\Code\Scalar.cs" Description="File successfully backed up as C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\RightGrid_Windows_CS\Backup\Scalar.cs">
+</Event><Event ErrorLevel="0" Project="Yaml" Source="..\yaml\Code\Sequence.cs" Description="File successfully backed up as C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\RightGrid_Windows_CS\Backup\Sequence.cs">
+</Event><Event ErrorLevel="0" Project="Yaml" Source="..\yaml\Code\String.cs" Description="File successfully backed up as C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\RightGrid_Windows_CS\Backup\String.cs">
+</Event><Event ErrorLevel="0" Project="Yaml" Source="..\yaml\Code\Timestamp.cs" Description="File successfully backed up as C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\RightGrid_Windows_CS\Backup\Timestamp.cs">
+</Event><Event ErrorLevel="0" Project="Yaml" Source="..\yaml\Code\WriteStream.cs" Description="File successfully backed up as C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\RightGrid_Windows_CS\Backup\WriteStream.cs">
+</Event><Event ErrorLevel="0" Project="Yaml" Source="..\yaml\Code\Yaml.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Yaml" Source="..\yaml\Code\Yaml.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Yaml" Source="..\yaml\Code\Yaml.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

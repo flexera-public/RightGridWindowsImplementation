@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Examples">
+</Property><Property Name="Solution File" Value="C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\yaml\Examples\Examples.sln">
+</Property><Property Name="User Options File" Value="C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\yaml\Examples\Examples.suo">
+</Property><Property Name="Date" Value="Friday, December 30, 2011">
+</Property><Property Name="Time" Value="14:43 PM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="Examples.sln" Description="File successfully backed up as C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\yaml\Examples\Backup\Examples.sln">
+</Event><Event ErrorLevel="0" Project="" Source="Examples.suo" Description="File successfully backed up as C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\yaml\Examples\Backup\Examples.suo">
+</Event><Event ErrorLevel="0" Project="Test Christophe" Source="Test Christophe\Test Christophe.csproj" Description="Project file successfully backed up as C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\yaml\Examples\Backup\Test Christophe\Test Christophe.csproj">
+</Event><Event ErrorLevel="0" Project="Test Christophe" Source="Test Christophe\Test Christophe.csproj.user" Description="Project user file successfully backed up as C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\yaml\Examples\Backup\Test Christophe\Test Christophe.csproj.user">
+</Event><Event ErrorLevel="0" Project="Test Christophe" Source="Test Christophe\Main-Christophe.cs" Description="File successfully backed up as C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\yaml\Examples\Backup\Test Christophe\Main-Christophe.cs">
+</Event><Event ErrorLevel="0" Project="Test Christophe" Source="Test Christophe\TryCode.cs" Description="File successfully backed up as C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\yaml\Examples\Backup\Test Christophe\TryCode.cs">
+</Event><Event ErrorLevel="0" Project="Test Christophe" Source="Test Christophe\Test Christophe.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="Test Christophe" Source="Test Christophe\Test Christophe.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="WebExamples" Source="WebExamples\WebExamples.csproj" Description="Project file successfully backed up as C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\yaml\Examples\Backup\WebExamples\WebExamples.csproj">
+</Event><Event ErrorLevel="0" Project="WebExamples" Source="WebExamples\WebExamples.csproj.user" Description="Project user file successfully backed up as C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\yaml\Examples\Backup\WebExamples\WebExamples.csproj.user">
+</Event><Event ErrorLevel="0" Project="WebExamples" Source="WebExamples\Test.cs" Description="File successfully backed up as C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\yaml\Examples\Backup\WebExamples\Test.cs">
+</Event><Event ErrorLevel="0" Project="WebExamples" Source="WebExamples\WebExamples.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="WebExamples" Source="WebExamples\WebExamples.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="Examples.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="Examples.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="Test Christophe" Source="Test Christophe\Test Christophe.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event><Event ErrorLevel="0" Project="WebExamples" Source="WebExamples\WebExamples.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

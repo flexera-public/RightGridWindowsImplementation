@@ -1,0 +1,75 @@
+\subsection{Pseudocode van het parse algoritme}
+\label{pseudo-code}
+\begin{lstlisting}
+
+	function Parse (string code)
+	{
+		/*Dit zal later nog anders geïmplementeerd moeten worden
+		  (dit is geen one-pass methode)*/
+		code = splitsinregels (code);
+		
+		regel = 0;
+		regel = springOverLegeRegels (code, regel);
+
+		if (eersteKarakter == '>')
+			-> dit is een folded scalar;
+
+		else if (eersteKarakter == ´|')
+			-> dit is een blokje zonder folding;
+
+		else if (eersteKarakters == '!!'
+			-> expliciete aanduiding van het type: vb '!!seq'
+			-> Parse dat type
+
+		else if (eersteKarakter == '-')
+		{
+			-> dit is het begin van een sequence;
+			sequence = new sequence;
+			while (eersteKarakter == '-')
+			{
+				childNode = ingesprongen regels die volgen;
+				sequence . addChlild (parse (childNode));
+
+				-> Zoek het volgende '-' karakter
+			}
+		}
+
+		else if (regel bevat een ":" of begint met "?")
+		{
+			-> Dit is een mapping
+
+			mapping = new mapping;
+			while (deze regel bevat ":" of begint met "?")
+			{
+				key = wat voor ":" staat of volgt na "?"
+				childNode = ingesprongen regels die volgen na ":";
+				mapping . addChild (parse (key), parse (childNode));
+
+				-> Ga naar de volgende regel (bevat ook een ":")
+			}
+		}
+
+		else
+		{
+			-> Dit is een scalar
+
+			Bepaal het type scalar (datum, float, ...) en 
+			geef het resultaat terug.
+		}
+	}
+
+	function VerwijderIndentatie ()
+	{
+		-> Ga alle regels na, en vind de regel met de meeste voorgaande spaties
+		-> Verwijder voor elke regel dit aantal spaties
+		-> Geef het resultaat terug
+
+		/* Nota: deze manier van werken laat geen one-pass 
+			 processing toe, een andere oplossing is het aantal 
+			 spaties voor de eerste regel te
+			 bepalen en dat aantal overal van te verwijderen.
+			 We moeten er dan  wel van uit gaan dat het 
+			 bronbestand correcte YAML code bevat.*/
+	}
+
+\end{lstlisting}

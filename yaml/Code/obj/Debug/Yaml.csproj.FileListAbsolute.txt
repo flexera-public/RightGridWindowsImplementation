@@ -1,0 +1,6 @@
+C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\yaml\Code\bin\Debug\Yaml.dll
+C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\yaml\Code\bin\Debug\Yaml.pdb
+C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\yaml\Code\bin\Debug\Yaml.xml
+C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\yaml\Code\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\yaml\Code\obj\Debug\Yaml.dll
+C:\Users\rshade\Documents\Visual Studio 2010\Projects\RightGridWindowsImplementation\yaml\Code\obj\Debug\Yaml.pdb

@@ -1,0 +1,119 @@
+--- # UML Diagram
+NameSpaces:
+  -
+    Name: Yaml
+    Classes:
+      -
+          Name: Node
+          Public methods:
+              - "static Parse (lines: string []): Node"
+              - "ToString ()"   # Schrijft deze boom naar een Yaml string
+          Members:
+              - AnchorName: string
+      -
+          Name: Stream
+          Public methods:
+              - "static FromFile (filename: string)"
+              - "Parser (lines: string [])"
+              - "ToString (): string"
+          Operator overloads:
+              - "Operator [i: int]: Node" # indexer
+          Members:
+              - "YamlDocuments: Node []"
+          Private members:
+              - "anchors: Anchors []"
+      -
+          Name: Sequence
+          Erft van: Node
+          Public methods:
+              - "AddNode (node: Node): void"
+              - "AddNode (node: Node, position: int): void"
+              - "RemoveNode (node: Node): void" # Dit kan meerdere nodes verwijderen (indien er meerdere referenties dezelfde zijn)
+              - "RemoveNode (index: int): void"
+              - "Clear (): void"
+              - "ToString ()"
+          Operator overloads:
+              - "Operator [i: int]: Node" # indexer
+	  Members:
+	      - nodes : ArrayList
+      -
+          Name: Mapping
+          Erft van: Node
+          Public methods:
+              - "AddNode (key: Node, value: Node): void"
+              - "RemoveNode (key: Node): void" # Dit kan meerdere nodes verwijderen (indien er meerdere referenties dezelfde zijn)
+              - "RemoveNode (index: int): void"
+              - "Clear (): void"
+              - "ToString ()"
+	  Members:
+	      - nodes : ArrayList
+      -
+          Name: Set # een mapping die enkel keys heeft, geen values (of null values)
+          Erft van: Mapping
+          Public methods:
+              - "AddNode (node: Node): void"
+      -
+          Name: Scalar
+          Erft van: Node
+	  Abstract: y
+          Public methods:
+              - "Scalar (string content)"
+              - "ToString ()" # Abstract (bestaat eigenlijk al van in Object)
+      -
+          Name: String
+          "Erft van": Scalar
+          Public methods:
+              - "String (value: string)"
+              - "ToString ()"
+          Members:
+              - "Value: string"
+      -
+          Name: Boolean
+          "Erft van": Scalar
+          Public methods:
+              - "Boolean (value: bool)"
+              - "ToString ()"
+          Members:
+              - "Value: bool"
+      -
+          Name: Integer
+          "Erft van": Scalar
+          Public methods:
+              - "Integer (value: int)"
+              - "Integer (value: long)"
+              - "ToString ()"
+          Members:
+              - "Value: long"
+      -
+          Name: Float
+          "Erft van": Scalar
+          Public methods:
+              - "Float (value: int)"
+              - "Float (value: long)"
+              - "ToString ()"
+          Members:
+              - "Value: double"
+      -
+          Name: Binary
+          "Erft van": Scalar
+          Public methods:
+              - "Binary (value: byte [])"
+              - "ToString ()"
+          Members:
+              - "Value: byte []"
+      -
+          Name: TimeStamp
+          "Erft van": Scalar
+          Public methods:
+              - "TimeStamp (value: Date)"
+              - "ToString ()"
+          Members:
+              - "Value: Date"
+      -
+          Name: Anchor
+          Public methods:
+              - "Anchor (name string, reference: Node)"
+              - "GetValue (): Node"
+              - "GetName ()"
+	      - "SetName ()" # Eigenlijk overbodig
+...
