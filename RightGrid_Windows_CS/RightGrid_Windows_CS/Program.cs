@@ -18,12 +18,23 @@ using Yaml;
 
 namespace WinRightGrid
 {
-    class Program
+  class Program
     {
-        public static void Main(string[] args)
+      public static void Main(string[] args)
         {
             Console.WriteLine(Queue.ListSQSQueues());
-            Console.WriteLine(Queue.Send("test"));
+            Console.WriteLine(Queue.Count());
+            Console.WriteLine("sending Message");
+            //Console.WriteLine(Queue.Send("test"));
+            Console.WriteLine("Getting Message");
+            Message msg = Queue.Get();
+            Console.WriteLine(msg.ReceiptHandle.ToString());
+            Console.WriteLine(msg.Body.ToString());
+            Console.WriteLine("New Count");
+            Console.WriteLine(Queue.Count());
+            Console.WriteLine("Delete Message");
+            Console.WriteLine(Queue.Delete(msg.ReceiptHandle.ToString()));
+            Queue.Count();
             Console.Read();
         }
         public static void Run()
