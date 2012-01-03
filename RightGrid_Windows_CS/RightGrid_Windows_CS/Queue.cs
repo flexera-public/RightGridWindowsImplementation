@@ -16,7 +16,7 @@ namespace WinRightGrid
         public static string Send(string msg) {
             AmazonSQS sqs = AWSClientFactory.CreateAmazonSQSClient();
             SendMessageRequest msgreq = new SendMessageRequest();
-            msgreq.QueueUrl = ConfigurationManager.AppSettings["SQSUrl"];
+            msgreq.QueueUrl = ConfigurationManager.AppSettings["SQS_Url"];
             msgreq.MessageBody = msg;
             SendMessageResponse msgres = sqs.SendMessage(msgreq);
             SendMessageResult msgrst = msgres.SendMessageResult;
@@ -26,8 +26,8 @@ namespace WinRightGrid
             AmazonSQS sqs = AWSClientFactory.CreateAmazonSQSClient();
             ReceiveMessageRequest r_msgreq = new ReceiveMessageRequest();
             r_msgreq.MaxNumberOfMessages = 1;
-            r_msgreq.QueueUrl = ConfigurationManager.AppSettings["SQSUrl"];
-            Decimal Vis_Timeout = System.Convert.ToDecimal(ConfigurationManager.AppSettings["SQSVisibility"]);
+            r_msgreq.QueueUrl = ConfigurationManager.AppSettings["SQS_Url"];
+            Decimal Vis_Timeout = System.Convert.ToDecimal(ConfigurationManager.AppSettings["SQS_Visibility"]);
             r_msgreq.VisibilityTimeout = Vis_Timeout;
             ReceiveMessageResponse r_msgres = sqs.ReceiveMessage(r_msgreq);
             //ChangeMessageVisibilityRequest chg_message_vis = new ChangeMessageVisibilityRequest();
@@ -40,7 +40,7 @@ namespace WinRightGrid
         public static string Delete(string msg_id) {
             AmazonSQS sqs = AWSClientFactory.CreateAmazonSQSClient();
             DeleteMessageRequest d_msgreq = new DeleteMessageRequest();
-            d_msgreq.QueueUrl = ConfigurationManager.AppSettings["SQSUrl"];
+            d_msgreq.QueueUrl = ConfigurationManager.AppSettings["SQS_Url"];
             d_msgreq.ReceiptHandle = msg_id;
             DeleteMessageResponse d_msgres = sqs.DeleteMessage(d_msgreq);
             return "Deleted Message \n" + d_msgres.ResponseMetadata.ToString();
@@ -48,7 +48,7 @@ namespace WinRightGrid
         public static int Count() { 
             AmazonSQS sqs = AWSClientFactory.CreateAmazonSQSClient();
             GetQueueAttributesRequest gqreq = new GetQueueAttributesRequest();
-            gqreq.QueueUrl = ConfigurationManager.AppSettings["SQSUrl"];
+            gqreq.QueueUrl = ConfigurationManager.AppSettings["SQS_Url"];
             List<string> attr = new List<string>(); 
             attr.Add("All");
             gqreq.AttributeName = attr;

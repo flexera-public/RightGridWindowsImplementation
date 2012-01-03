@@ -5,6 +5,7 @@ using System.Text;
 using System.IO;
 using System.Configuration;
 using Amazon;
+using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.S3.Transfer;
 using Amazon.S3.Util;
@@ -15,6 +16,7 @@ namespace WinRightGrid
     class Storage
     {
         public static void Put(string fileName) {
+            AmazonS3 s3Client = AWSClientFactory.CreateAmazonS3Client();           
             Console.WriteLine(fileName);
         }
         public static void Get(string bucket, string path, string fileName) { }
