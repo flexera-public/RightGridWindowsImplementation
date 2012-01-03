@@ -66,6 +66,25 @@ namespace WinRightGrid
             ListQueuesResult sqsrst = sqsresponse.ListQueuesResult;
             return sqsrst.ToString();
         }
+        public static void Test()
+        {
 
+            Console.WriteLine(Queue.ListSQSQueues());
+            Console.WriteLine(Queue.Count());
+            Console.WriteLine("sending Message");
+            Console.WriteLine(Queue.Send("test"));
+            Console.WriteLine("Getting Message");
+            Message msg = Queue.Get();
+            if (msg != null)
+            {
+                Console.WriteLine(msg.ReceiptHandle.ToString() ?? null);
+                Console.WriteLine(msg.Body.ToString() ?? null);
+                Console.WriteLine("New Count");
+                Console.WriteLine(Queue.Count());
+                Console.WriteLine("Delete Message");
+                Console.WriteLine(Queue.Delete(msg.ReceiptHandle.ToString()));
+            }
+            Queue.Count();
+        }
     }
 }
