@@ -15,11 +15,30 @@ namespace WinRightGrid
 {
     class Storage
     {
-        public static void Put(string fileName) {
-            AmazonS3 s3Client = AWSClientFactory.CreateAmazonS3Client();           
-            Console.WriteLine(fileName);
+        public static void Put(string bucket,string key,string fileName) {
+            AmazonS3 s3Client = AWSClientFactory.CreateAmazonS3Client();
+            FileInfo file = new FileInfo(fileName);
+            Console.Write("Uploading " + file.Name + " to " + bucket + ":" + key + file.Name);
+            PutObjectRequest po_req = new PutObjectRequest();
+            po_req.BucketName = bucket;
+            po_req.Key = key + file.Name;
+            po_req.FilePath = fileName;
+            po_req.AutoCloseStream = true;
+            PutObjectResponse po_res = s3Client.PutObject(po_req);
+            Console.WriteLine(po_res.AmazonId2);
         }
-        public static void Get(string bucket, string path, string fileName) { }
+        public static void Get(string bucket, string key, string fileName) 
+        {
+            AmazonS3 s3Client = AWSClientFactory.CreateAmazonS3Client();
+            FileInfo file = new FileInfo(key);
+            Console.WriteLine("Download File " + bucket + ":" + key + " to " + fileName);
+            GetObjectRequest get_req = new GetObjectRequest();
+            get_req.BucketName = bucket;
+            get_req.Key = key;
+            GetObjectResponse get_res = s3Client.GetObject(get_req);
+            get_res.WriteResponseStreamToFile(fileName);
+            Console.WriteLine(get_res.Metadata.AllKeys.FirstOrDefault());
+        }
         public static void Test() {
             Console.WriteLine("Testing Storage");
             Console.WriteLine("Creating Temp File");
@@ -38,7 +57,9 @@ namespace WinRightGrid
             {
                 sw.Write(sb.ToString());
             }
-            Storage.Put("test");
+            Storage.Put(ConfigurationManager.AppSettings["S3_Bucket"],"output/",ConfigurationManager.AppSettings["StrorageSampleFile"]);
+            FileInfo o_samp_file = new FileInfo(ConfigurationManager.AppSettings["StrorageSampleFile"]);
+            Storage.Get(ConfigurationManager.AppSettings["S3_Bucket"], "output/" + o_samp_file.Name, ConfigurationManager.AppSettings["StrorageSampleFile"]+"_output");
         }
     }
 }

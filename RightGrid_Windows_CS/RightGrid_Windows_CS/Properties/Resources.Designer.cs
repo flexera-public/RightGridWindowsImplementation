@@ -59,5 +59,14 @@ namespace WinRightGrid.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 111.
+        /// </summary>
+        internal static string AWS_ACCESS_KEY {
+            get {
+                return ResourceManager.GetString("AWS_ACCESS_KEY", resourceCulture);
+            }
+        }
     }
 }

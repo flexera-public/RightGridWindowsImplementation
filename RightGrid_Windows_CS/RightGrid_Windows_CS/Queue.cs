@@ -13,20 +13,20 @@ namespace WinRightGrid
 {
    class Queue
     {
-        public static string Send(string msg) {
+        public static string Send(string queue_url, string msg) {
             AmazonSQS sqs = AWSClientFactory.CreateAmazonSQSClient();
             SendMessageRequest msgreq = new SendMessageRequest();
-            msgreq.QueueUrl = ConfigurationManager.AppSettings["SQS_Url"];
+            msgreq.QueueUrl = queue_url;
             msgreq.MessageBody = msg;
             SendMessageResponse msgres = sqs.SendMessage(msgreq);
             SendMessageResult msgrst = msgres.SendMessageResult;
             return msgrst.ToString();
         }
-        public static Message Get() { 
+        public static Message Get(string queue_url) { 
             AmazonSQS sqs = AWSClientFactory.CreateAmazonSQSClient();
             ReceiveMessageRequest r_msgreq = new ReceiveMessageRequest();
             r_msgreq.MaxNumberOfMessages = 1;
-            r_msgreq.QueueUrl = ConfigurationManager.AppSettings["SQS_Url"];
+            r_msgreq.QueueUrl = queue_url;
             Decimal Vis_Timeout = System.Convert.ToDecimal(ConfigurationManager.AppSettings["SQS_Visibility"]);
             r_msgreq.VisibilityTimeout = Vis_Timeout;
             ReceiveMessageResponse r_msgres = sqs.ReceiveMessage(r_msgreq);
@@ -37,25 +37,25 @@ namespace WinRightGrid
             Message msg = r_msgrst.Message.FirstOrDefault();
             return msg;
         }
-        public static string Delete(string msg_id) {
+        public static string Delete(string queue_url, string msg_id) {
             AmazonSQS sqs = AWSClientFactory.CreateAmazonSQSClient();
             DeleteMessageRequest d_msgreq = new DeleteMessageRequest();
-            d_msgreq.QueueUrl = ConfigurationManager.AppSettings["SQS_Url"];
+            d_msgreq.QueueUrl = queue_url;
             d_msgreq.ReceiptHandle = msg_id;
             DeleteMessageResponse d_msgres = sqs.DeleteMessage(d_msgreq);
             return "Deleted Message \n" + d_msgres.ResponseMetadata.ToString();
         }
-        public static int Count() { 
+        public static int Count(string queue_url) { 
             AmazonSQS sqs = AWSClientFactory.CreateAmazonSQSClient();
             GetQueueAttributesRequest gqreq = new GetQueueAttributesRequest();
-            gqreq.QueueUrl = ConfigurationManager.AppSettings["SQS_Url"];
+            gqreq.QueueUrl = queue_url;
             List<string> attr = new List<string>(); 
             attr.Add("All");
             gqreq.AttributeName = attr;
             GetQueueAttributesResponse gqres = sqs.GetQueueAttributes(gqreq);
             GetQueueAttributesResult gqrst = gqres.GetQueueAttributesResult;
-            Console.WriteLine("Invisible Messages:" + gqrst.ApproximateNumberOfMessagesNotVisible.ToString());
-            Console.WriteLine("Messages:" + gqrst.ApproximateNumberOfMessages);
+            //Console.WriteLine("Invisible Messages:" + gqrst.ApproximateNumberOfMessagesNotVisible.ToString());
+            //Console.WriteLine("Messages:" + gqrst.ApproximateNumberOfMessages);
             return gqrst.ApproximateNumberOfMessages;
         }
         public static string ListSQSQueues()
@@ -70,21 +70,27 @@ namespace WinRightGrid
         {
 
             Console.WriteLine(Queue.ListSQSQueues());
-            Console.WriteLine(Queue.Count());
-            Console.WriteLine("sending Message");
-            Console.WriteLine(Queue.Send("test"));
-            Console.WriteLine("Getting Message");
-            Message msg = Queue.Get();
-            if (msg != null)
-            {
-                Console.WriteLine(msg.ReceiptHandle.ToString() ?? null);
-                Console.WriteLine(msg.Body.ToString() ?? null);
-                Console.WriteLine("New Count");
-                Console.WriteLine(Queue.Count());
-                Console.WriteLine("Delete Message");
-                Console.WriteLine(Queue.Delete(msg.ReceiptHandle.ToString()));
-            }
-            Queue.Count();
+            //input_test
+            List<string> queues = new List<string>();
+            queues.Add(ConfigurationManager.AppSettings["input_queue_url"]);
+            queues.Add(ConfigurationManager.AppSettings["results_queue_url"]);
+            queues.ForEach(delegate(string url) {
+                Console.WriteLine(Queue.Count(url));
+                Console.WriteLine("sending Message");
+                Console.WriteLine(Queue.Send(url,"test"));
+                Console.WriteLine("Getting Message");
+                Message msg = Queue.Get(url);
+                if (msg != null)
+                {
+                    Console.WriteLine(msg.ReceiptHandle.ToString() ?? null);
+                    Console.WriteLine(msg.Body.ToString() ?? null);
+                    Console.WriteLine("New Count");
+                    Console.WriteLine(Queue.Count(url));
+                    Console.WriteLine("Delete Message");
+                    Console.WriteLine(Queue.Delete(url,msg.ReceiptHandle.ToString()));
+                }
+                Queue.Count(url);
+            });
         }
     }
 }
