@@ -1,3 +1,12 @@
 ﻿Yaml Parser - http://www.codeproject.com/KB/recipes/yamlparser.aspx
 AWS.NetSDK - http://aws.amazon.com/sdkfornet/
 Modify App at run-time - http://sufianrashid.wordpress.com/2011/10/17/c-modify-app-config-file-at-run-time/
+
+
+Job Producer - Windows Version(http://support.rightscale.com/03-Tutorials/02-AWS/03-Grid_Edition/Basic_RightGrid_Example)
+work_unit = {
+:created_at => Time.now.utc.strftime('%Y-%m-%d %H:%M:%S %Z'),
+:input_file => [File.join(jobspec[:bucket], filename)],
+:output_file => jobspec[:worker_name],
+:id => id
+}
