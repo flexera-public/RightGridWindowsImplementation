@@ -36,17 +36,16 @@ namespace WinRightGrid
             Console.WriteLine("Starting");
             string path = Directory.GetCurrentDirectory();
             string input_dir = Path.Combine(path,"input");
-            string output_dir = Path.Combine(path,"\\output");
+            string output_dir = Path.Combine(path,"output");
             Console.WriteLine("Creating Input Directory unless exists");
             if (!Directory.Exists(input_dir)) { Directory.CreateDirectory(input_dir); }
             Console.WriteLine("Creating Output Directory unless exists");
             if (!Directory.Exists(output_dir)) { Directory.CreateDirectory(output_dir); }
             while (Queue.Count(ConfigurationManager.AppSettings["input_queue_url"]) >= 1)
             {
-                Console.WriteLine("pass");
                 Message msg = Queue.Get(ConfigurationManager.AppSettings["input_queue_url"]);
                 Console.WriteLine("got message");
-                if (msg.Body != null)  {
+                if (msg != null)  {
                     Console.WriteLine(msg.Body);
                     //Node node = Node.Parse(msg.Body);
                     Console.WriteLine("parsed message");
@@ -72,15 +71,16 @@ namespace WinRightGrid
                     Console.WriteLine("output_file is set to: " + output_file);
                     Console.WriteLine("created_at is set to: " + created_at);
                     Console.WriteLine("job_id is set to: " + job_id);
-                    //Storage.Get(ConfigurationManager.AppSettings["S3_Bucket"], ConfigurationManager.AppSettings["S3_Input_Path"]+input_file, Path.Combine(input_dir,input_file));
-                    //Runner.run(node["input_file"],node["output_file"]));
-                    //Storage.Put(ConfigurationManager.AppSettings["S3_Bucket"], ConfigurationManager.AppSettings["S3_Output_Path"], node["output_file"]);
+                    Storage.Get(ConfigurationManager.AppSettings["S3_Bucket"], ConfigurationManager.AppSettings["S3_Input_Path"]+input_file, Path.Combine(input_dir,input_file));
+                    Runner.run(Path.Combine(input_dir, input_file),Path.Combine(output_dir,output_file));
+                    Storage.Put(ConfigurationManager.AppSettings["S3_Bucket"], ConfigurationManager.AppSettings["S3_Output_Path"], Path.Combine(output_dir,output_file));
+                    Queue.Delete(ConfigurationManager.AppSettings["input_queue_url"], msg.ReceiptHandle.ToString());
                 }
-                Queue.Delete(ConfigurationManager.AppSettings["input_queue_url"], msg.ReceiptHandle.ToString());
+                
             }
             Console.WriteLine("Processing Completed");
         }
-
+        public static void gen_finished_message(int job_id, string output_file, string created_at) { }
         
     }
 }

@@ -57,6 +57,7 @@ namespace WinRightGrid
             {
                 sw.Write(sb.ToString());
             }
+            Storage.Put(ConfigurationManager.AppSettings["S3_Bucket"], ConfigurationManager.AppSettings["S3_Input_Path"], ConfigurationManager.AppSettings["StrorageSampleFile"]);
             Storage.Put(ConfigurationManager.AppSettings["S3_Bucket"],"output/",ConfigurationManager.AppSettings["StrorageSampleFile"]);
             FileInfo o_samp_file = new FileInfo(ConfigurationManager.AppSettings["StrorageSampleFile"]);
             Storage.Get(ConfigurationManager.AppSettings["S3_Bucket"], "output/" + o_samp_file.Name, ConfigurationManager.AppSettings["StrorageSampleFile"]+"_output");
