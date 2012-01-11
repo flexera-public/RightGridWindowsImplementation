@@ -41,7 +41,9 @@ namespace WinRightGrid
               
           }
           Console.WriteLine(stopWatch.Elapsed);
+        #if DEBUG
           Console.Read();
+        #endif
         }
         public static void Run()
         {
