@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Configuration;
 using System.Management;
+using System.Diagnostics;
 
 using Amazon;
 using Amazon.EC2;
@@ -24,11 +25,22 @@ namespace WinRightGrid
 {
   class Program
     {
+      static TimeSpan queue_wait_time = new TimeSpan(0, 0, Convert.ToInt32(ConfigurationManager.AppSettings["Queue_Check_Frequency_Seconds"]));
       public static void Main(string[] args)
         {
           if (ConfigurationManager.AppSettings["QueueTest"] == "1") { Queue.Test(); };
           if (ConfigurationManager.AppSettings["StorageTest"] == "1") { Storage.Test(); };
-          Run();
+          DateTime rg_start_time = DateTime.Now;
+          Stopwatch stopWatch = new Stopwatch();
+          stopWatch.Start();
+          while (stopWatch.Elapsed.Minutes < Convert.ToInt32(ConfigurationManager.AppSettings["RightGrid_Timeout"]))
+          {
+              Run();
+              Console.WriteLine("Sleeping " + ConfigurationManager.AppSettings["Queue_Check_Frequency_Seconds"] + " seconds");
+              System.Threading.Thread.Sleep(queue_wait_time);
+              
+          }
+          Console.WriteLine(stopWatch.Elapsed);
           Console.Read();
         }
         public static void Run()
@@ -37,10 +49,16 @@ namespace WinRightGrid
             string path = Directory.GetCurrentDirectory();
             string input_dir = Path.Combine(path,"input");
             string output_dir = Path.Combine(path,"output");
-            Console.WriteLine("Creating Input Directory unless exists");
-            if (!Directory.Exists(input_dir)) { Directory.CreateDirectory(input_dir); }
-            Console.WriteLine("Creating Output Directory unless exists");
-            if (!Directory.Exists(output_dir)) { Directory.CreateDirectory(output_dir); }
+            if (!Directory.Exists(input_dir)) 
+            {
+                Console.WriteLine("Creating Input Directory");
+                Directory.CreateDirectory(input_dir); 
+            }
+            if (!Directory.Exists(output_dir)) 
+            {
+                Console.WriteLine("Creating Output Directory unless exists");
+                Directory.CreateDirectory(output_dir); 
+            }
             while (Queue.Count(ConfigurationManager.AppSettings["input_queue_url"]) >= 1)
             {
                 Message msg = Queue.Get(ConfigurationManager.AppSettings["input_queue_url"]);
@@ -81,6 +99,7 @@ namespace WinRightGrid
             Console.WriteLine("Processing Completed");
         }
         public static void gen_finished_message(int job_id, string output_file, string created_at) { }
+        public static void shutdown_system() { }
         
     }
 }
