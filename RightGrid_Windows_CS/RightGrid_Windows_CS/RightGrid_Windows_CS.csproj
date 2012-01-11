@@ -77,6 +77,15 @@
     </Reference>
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="YamlDotNet.Converters">
+      <HintPath>..\..\YamlDotNet-bin-1.1.10\YamlDotNet.Converters.dll</HintPath>
+    </Reference>
+    <Reference Include="YamlDotNet.Core">
+      <HintPath>..\..\YamlDotNet-bin-1.1.10\YamlDotNet.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="YamlDotNet.RepresentationModel">
+      <HintPath>..\..\YamlDotNet-bin-1.1.10\YamlDotNet.RepresentationModel.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Runner.cs" />
@@ -133,16 +142,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\YamlUtility_20110216\YamlUtility.csproj">
-      <Project>{0716F257-72DD-41EF-8E79-54BA388E3AB1}</Project>
-      <Name>YamlUtility</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\yaml\Code\Yaml.csproj">
-      <Project>{D4424F4D-7939-4247-98F5-6A7F6DEBA7C9}</Project>
-      <Name>Yaml</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -150,5 +149,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="README" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
 </Project>
